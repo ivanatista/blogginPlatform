@@ -20,8 +20,9 @@ use Illuminate\Http\Request;
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('index');
 
-Route::get('/', 'PostController@index')->name('index');
+Route::get('/home', 'PostController@index')->name('home');
 Route::get('/submit', 'PostController@create');
 Route::post('/submit', 'PostController@insert');
+Route::get('/{id}/toggleActive', 'PostController@toggleActive');

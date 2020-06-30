@@ -3,17 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Posts;
 
 class PostController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index(){
         $posts = Posts::where('active',1)
             ->orderBy('created_at', 'desc')
             ->paginate(10);
         
-        return view('welcome', compact('posts'));
+        return view('/home', compact('posts'));
     }
 
     public function create(){
@@ -30,13 +35,35 @@ class PostController extends Controller
         $post = Posts::create([
             'title' => $request->title,
             'description' => $request->description,
-            'active' => 1
+            'active' => 1,
+            'author_id' => Auth::id()
         ]);
 
-        return redirect()->route('index');
+        return redirect()->route('home');
     }
 
     public function showAuthorPosts($id){
-        $posts = Posts::where('');
+        $posts = Posts::where(['author_id', $id],['active', 1])->first();
+        if($posts == null){
+            return index();
+        }
+        return view('/home', compact('posts'));
     }
+
+    public function toggleActive($id){
+        $post = Posts::find($id);
+        if($post->active){
+            $post->active = 0;
+        }else{
+            $post->active = 1;
+        }
+        $post->save();
+
+        return redirect()->route('home');
+    }
+
+    public function delete($id){
+        
+    }
+
 }

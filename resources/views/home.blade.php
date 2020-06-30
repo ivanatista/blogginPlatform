@@ -13,7 +13,18 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <div>
+                        <ul>
+                            @foreach ($posts as $post)
+                                @if($post->active != 1)
+                                    <li>
+                                        <del><{{ $post->title }} - {{ $post->created_at }} - <a href="/{{ $post->id }}/toggleActive">Enable</a></del>
+                                    </li> 
+                                @endif    
+                                <li>{{ $post->title }} - {{ $post->created_at }} - <a href="/{{ $post->id }}/toggleActive">Disable</a></li> 
+                            @endforeach
+                        </ul>
+                    </div>
                     You are logged in!
                 </div>
             </div>
