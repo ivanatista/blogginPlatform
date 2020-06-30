@@ -91,6 +91,14 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="content">
+                <h1>
+                    <a href="/submit">
+                        Create New POST
+                    </a>
+                </h1>
+            </div>
         </div>
     </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +18,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-// Auth::routes();
+Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', function(){
-    $posts = \App\Posts::all();
-
-    return view('welcome', ['posts'=> $posts]);
-});
+Route::get('/', 'PostController@index')->name('index');
+Route::get('/submit', 'PostController@create');
+Route::post('/submit', 'PostController@insert');

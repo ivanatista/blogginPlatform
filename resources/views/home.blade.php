@@ -17,6 +17,11 @@
                     You are logged in!
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <a class="btn btn-primary btn-lg" href="/submit" role="button">
+                    Create new Post
+                </a>
+            </div>
         </div>
     </div>
 </div>
