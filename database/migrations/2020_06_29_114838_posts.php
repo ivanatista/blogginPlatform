@@ -16,7 +16,7 @@ class Posts extends Migration
       Schema::create('posts', function (Blueprint $table) {
         $table->id();
         // $table->unsignedBigInteger('authorId');
-        // $table->foreign('authorId')->references('id')->on('users')->onDelete('cascade');
+        $table->foreignId('author_id');
         $table->string('title')->unique();
         $table->text('description');
         $table->boolean('active');

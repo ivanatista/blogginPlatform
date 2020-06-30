@@ -35,4 +35,8 @@ class PostController extends Controller
 
         return redirect()->route('index');
     }
+
+    public function showAuthorPosts($id){
+        $posts = Posts::where('');
+    }
 }

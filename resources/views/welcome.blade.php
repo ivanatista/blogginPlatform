@@ -86,7 +86,7 @@
                 <div>
                     <ul>
                         @foreach ($posts as $post)
-                            <li>{{ $post->title }}</li>    
+                            <li>{{ $post->title }} - {{ $post->created_at }}</li>    
                         @endforeach
                     </ul>
                 </div>
