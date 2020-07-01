@@ -21,7 +21,7 @@ class AutoImportController extends Controller
             }
         }
 
-        return "Exito ".count($newPost);
+        return "Success Importing ".count($newPost)." new posts";
 
     }
 
