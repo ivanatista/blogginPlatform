@@ -1,5 +1,5 @@
 <ul>
-    @for($i=0;$i < $result["data"]; $i++)
+    @for($i=0; $i < count($result["data"]); $i++)
     <li>
         {{$result["data"][$i]["title"]}} -
         {{$result["data"][$i]["description"]}} -

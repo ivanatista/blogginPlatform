@@ -27,4 +27,4 @@ Route::get('/submit', 'PostController@create');
 Route::post('/submit', 'PostController@insert');
 Route::get('/{id}/toggleActive', 'PostController@toggleActive');
 
-Route::get('/import', 'AutoImportController@fetch');
+Route::get('/import', 'AutoImportController@autoImport');
