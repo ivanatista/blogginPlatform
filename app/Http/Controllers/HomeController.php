@@ -27,8 +27,18 @@ class HomeController extends Controller
     {
         $posts = Posts::where('active',1)
             ->orderBy('created_at', 'desc')
-            ->paginate(10);
+            ->get();
         
         return view('welcome', compact('posts'));
     }
+
+    public function indexAsc()
+    {
+        $posts = Posts::where('active',1)
+            ->orderBy('created_at', 'asc')
+            ->get();
+        
+        return view('welcome', compact('posts'));
+    }
+
 }

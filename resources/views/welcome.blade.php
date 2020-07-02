@@ -6,6 +6,8 @@
 
         <title>Laravel</title>
 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -20,9 +22,9 @@
                 margin: 0;
             }
 
-            .full-height {
+            /* .full-height {
                 height: 100vh;
-            }
+            } */
 
             .flex-center {
                 align-items: center;
@@ -45,7 +47,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 24px;
             }
 
             .links > a {
@@ -79,25 +81,29 @@
                 </div>
             @endif
 
-            <div class="content">
+            <div class="content ">
                 <div class="title m-b-md">
                     Blog Posts
                 </div>
-                <div>
-                    <ul>
-                        @foreach ($posts as $post)
-                            <li>{{ $post->title }} - {{ $post->created_at }}</li>    
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
 
-            <div class="content">
-                <h1>
-                    <a href="/submit">
-                        Create New POST
+                    <a class="btn btn-primary btn-sm" href="/asc" role="button">
+                        SORT
                     </a>
-                </h1>
+                
+                
+                @foreach ($posts as $post)
+                <div class="card">
+                    <div class="card-header">{{ $post->title }}</div>
+                    <div class="card-body">
+                        <p class="card-text">{{ $post->description }}</p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                {{ $post->created_at }}
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                @endforeach
             </div>
         </div>
     </body>

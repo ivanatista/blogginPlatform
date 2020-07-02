@@ -22,6 +22,24 @@
                     </div>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-header">Your Post</div>
+
+                <div class="card-body">
+                    @if(is_null($authorsPosts))
+                    <p class="card-text">You don't have post to be shown</p>
+                    @else
+                        <div>
+                            <ul>
+                                @foreach ($authorsPosts as $post) 
+                                    <li>{{ $post->title }} - {{ $post->created_at }}</li> 
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    
+                </div>
+            </div>
             <div class="row justify-content-center">
                 <a class="btn btn-primary btn-lg" href="/submit" role="button">
                     Create new Post

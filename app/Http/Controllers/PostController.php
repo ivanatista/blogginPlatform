@@ -14,11 +14,20 @@ class PostController extends Controller
     }
 
     public function index(){
+
+        $authorsPosts = Posts::where('author_id',Auth::id())
+            ->orderBy('created_at', 'desc')
+            ->get();
+
         $posts = Posts::where('active',1)
             ->orderBy('created_at', 'desc')
-            ->paginate(10);
-        
-        return view('/home', compact('posts'));
+            ->get();
+        // if(is_null($authorsPosts)){
+        //     return view('home', compact('posts'));
+        // }else{
+        //     return view('home2', compact('posts','authorsPosts'));
+        // }
+        return view('home2', compact('posts','authorsPosts'));
     }
 
     public function create(){
@@ -42,12 +51,12 @@ class PostController extends Controller
         return redirect()->route('home');
     }
 
-    public function showAuthorPosts($id){
-        $posts = Posts::where(['author_id', $id],['active', 1])->first();
+    public function showAuthorPosts(){
+        $posts = Posts::where(['author_id', Auth::id()],['active', 1]);
         if($posts == null){
             return index();
         }
-        return view('/home', compact('posts'));
+        return view('home', compact('posts'));
     }
 
     public function toggleActive($id){
