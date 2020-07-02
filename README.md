@@ -3,12 +3,12 @@ Index
 1. [Description](#Description)
 1. [Requirements](#Requirements)
 1. [How To run this project](#How-To-run-this-project)
-    1. [Prepare .env](#Prepare-.env)
-    1. [Run updates](#Run-updates)
-    1. [Adding APP_KEY into .env file](#Adding-APP_KEY-into-.env-file)
-    1. [Run Artisan Migration & testing server](#Run-Artisan-Migration-&-testing-server)
-    1. [Login with and existing user](#Login-with-and-existing-user)
-    1. [Configure Task Schedule](#Configure-Task-Schedule)
+    1. [Prepare .env](#prepare-.env)
+    1. [Run updates](#run-updates)
+    1. [Adding APP_KEY into .env file](#adding-app_key-into-env-file)
+    1. [Run Artisan Migration & testing server](#run-artisan-migration--testing-server)
+    1. [Login with and existing user](#login-with-and-existing-user)
+    1. [Configure Task Schedule](#configure-task-schedule)
 
 ## Description
 
