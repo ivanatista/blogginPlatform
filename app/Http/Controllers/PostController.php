@@ -27,7 +27,8 @@ class PostController extends Controller
         // }else{
         //     return view('home2', compact('posts','authorsPosts'));
         // }
-        return view('home2', compact('posts','authorsPosts'));
+        // return view('home2', compact('posts','authorsPosts'));
+        return view('admin/post/show', compact('posts'));
     }
 
     public function create(){

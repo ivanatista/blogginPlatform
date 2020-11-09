@@ -27,6 +27,11 @@
                     Create new Post
                 </a>
             </div>
+            <div class="row justify-content-center">
+                <a class="btn btn-primary btn-lg" href="/submit" role="button">
+                    Admin Portal
+                </a>
+            </div>
         </div>
     </div>
 </div>

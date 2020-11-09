@@ -18,6 +18,7 @@ class Posts extends Migration
         // $table->unsignedBigInteger('authorId');
         $table->foreignId('author_id');
         $table->string('title')->unique();
+        $table->text('category');
         $table->text('description');
         $table->boolean('active');
         $table->timestamps();
