@@ -32,7 +32,10 @@ Route::get('/{id}/toggleActive', 'PostController@toggleActive');
 // Admin Routes
 Route::get('/home', 'AdminController@index')->name('home');
 Route::get('/admin/post/show', 'PostController@index');
+Route::get('/admin/post/{id}/toggle', 'PostController@toggleActive');
+
+Route::get('/admin/post/{id}/edit', 'PostController@edit');
 Route::get('/admin/post/create', 'PostController@create');
-Route::get('/admin/post/{id}', 'PostController@edit');
+
 
 // Route::get('/import', 'AutoImportController@autoImport');

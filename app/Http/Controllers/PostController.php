@@ -15,19 +15,16 @@ class PostController extends Controller
 
     public function index(){
 
-        $authorsPosts = Posts::where('author_id',Auth::id())
-            ->orderBy('created_at', 'desc')
-            ->get();
+        // $authorsPosts = Posts::where('author_id',Auth::id())
+        //     ->orderBy('created_at', 'desc')
+        //     ->get();
 
-        $posts = Posts::where('active',1)
-            ->orderBy('created_at', 'desc')
-            ->get();
-        // if(is_null($authorsPosts)){
-        //     return view('home', compact('posts'));
-        // }else{
-        //     return view('home2', compact('posts','authorsPosts'));
-        // }
-        // return view('home2', compact('posts','authorsPosts'));
+        // $posts = Posts::where('active',1)
+        //     ->orderBy('created_at', 'desc')
+        //     ->get();
+
+        $posts = Posts::all();
+       
         return view('admin/post/show', compact('posts'));
     }
 
