@@ -29,6 +29,9 @@ To know more about this development work You can access the kanban board made fo
 
 ### Prepare .env
 
+```
+cp .env.example .env
+```
 - Create a mysql (mariaDB) database.
 - Add your database configuration (database name, username and password) into your .env.
 
